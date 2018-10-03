@@ -22,6 +22,7 @@ public class MessageService {
 	}
 	
 	public Messages getMessage(long id){
+		System.out.println("Entered getMessage Method ");
 		return messages.get(id);
 	}
 	
