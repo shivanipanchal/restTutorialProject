@@ -33,10 +33,13 @@ public class MessageService {
 	}
 	
 	public Map<Long, Messages> updateMessage(Messages message){
+		System.out.println("Entered updateMessage of MessageService: " + message.getMessage());
 		if(message.getId()<=0){
+			System.out.println("Message Id is 0");
 			return null;
 		}
 		messages.put(message.getId(), message);
+		System.out.println(messages);
 		return messages;
 	}
 	
