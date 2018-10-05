@@ -43,7 +43,10 @@ public class MessageService {
 		return messages;
 	}
 	
-	public Messages removeMessage(long id){
-		return messages.remove(id);
+	public Map<Long, Messages> removeMessage(long id){
+		if(messages.remove(id) != null){
+			System.out.println("Message is removed successfully");
+		}
+		return messages;
 	}
 }

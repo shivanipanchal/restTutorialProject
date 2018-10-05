@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -50,5 +51,13 @@ public class MessageResource {
 		System.out.println("Entered updateMessage in MessageResource");
 		msg.setId(4);
 		return messageService.updateMessage(msg);
+	}
+	
+	@DELETE
+	@Path("/deleteMessage/{messageId}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Map<Long, Messages> deleteMessage(@PathParam("messageId") long id){
+		System.out.println("Message Id :" + id);
+		return messageService.removeMessage(id);
 	}
 }
